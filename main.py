@@ -19,14 +19,21 @@ def main():
 
 def end_screen(score, max_q):
     os.system("clear")
-    print("Congratulations! You can tell the difference politicians\n and computers {}% of the time".format(score / max_q * 100))
+    print("Congratulations! You got {}% right".format(score / max_q * 100))
+    print("""
+    //    \\
+    ||    ||
+     <>  <>
+        |
+       ___
+    """)
 
 def get_quote(mc):
     status = random.choice([0, 1])
     if status == 1:
-        quote = get_actual(7, FILE)
+        quote = get_actual(20, FILE)
     else:
-        quote = get_generated(7, mc)
+        quote = get_generated(20, mc)
     quote = list(quote)
     quote = "".join(quote)
     return quote, status
