@@ -9,8 +9,8 @@ def main():
     mc = initialize(FILE)
     #for i in get_actual(20, FILE):
     #    print(i)
-    for i in get_generated(10, mc):
-        print(i)
+    #for i in get_generated(10, mc):
+    #    print(i)
 
 
 

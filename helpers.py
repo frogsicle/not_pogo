@@ -36,7 +36,7 @@ class MarkovChain(object):
         t = random.choice(self.chain.keys())
         for i in range(0,maxItems):
             try:
-                print(self.chain[t])
+                #print(self.chain[t])
                 tmp = random.choice(self.chain[t])
                 res += " "+tmp
                 t= tmp
