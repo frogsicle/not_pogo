@@ -5,6 +5,7 @@ FILE = "assets/t1.txt"
 NUM=20
 import os
 import random
+import time
 
 def main():
     mc = initialize(FILE)
@@ -21,7 +22,7 @@ def end_screen(score, max_q):
     os.system("clear")
     print("Congratulations! You got {}% right".format(score / max_q * 100))
     print("""
-    //    \\
+     /    \\
     ||    ||
      <>  <>
         |
@@ -47,6 +48,16 @@ def present_questions(iquote, score, max_q, mc):
     print("".join(quote))
     answer = input()
     ret = interpret_answer(answer, veracity)
+    for i in range(4):
+        print('.')
+        time.sleep(0.2)
+    if ret:
+        print('Correct.')
+    else:
+        print('Wrong.')
+    print('\n press any key to continue' )
+    input()
+#    time.sleep(2)
     return ret
 
 def interpret_answer(answer, veracity):
