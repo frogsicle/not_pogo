@@ -27,7 +27,7 @@ def get_actual(num_words, txtfile, separator=" "):
         mx = len(fulltext) -1 -num_words
         while(1):
             start = random.randint(0,mx)
-            res = " ".join(fulltext[start:start+num_words])
+            res = separator.join(fulltext[start:start+num_words])
             yield res
 
 
