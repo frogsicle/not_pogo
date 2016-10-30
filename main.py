@@ -9,6 +9,8 @@ def main():
     mc = initialize(FILE)
     #for i in get_actual(20, FILE):
     #    print(i)
+    for i in get_generated(10, mc):
+        print(i)
 
 
 
@@ -27,13 +29,13 @@ def get_actual(num_words, txtfile, separator=" "):
             start = random.randint(0,mx)
             res = " ".join(fulltext[start:start+num_words])
             yield res
-    # iterator
-    pass
 
-def get_generated(num_words, mc):
+
+def get_generated(num_words, mc, separator=" "):
     #iterator
-    pass
-
+    while(1):
+        res = "".join(mc.printSth(maxItems=num_words))
+        yield res
 if __name__ == "__main__":
     main()
 
