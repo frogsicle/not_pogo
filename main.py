@@ -2,7 +2,7 @@
 
 from helpers import MarkovChain
 FILE = "assets/t1.txt"
-
+NUM=20
 import os
 import random
 
@@ -24,9 +24,9 @@ def end_screen(score, max_q):
 def get_quote(mc):
     status = random.choice([0, 1])
     if status == 1:
-        quote = get_actual(7, FILE)
+        quote = get_actual(NUM, FILE)
     else:
-        quote = get_generated(7, mc)
+        quote = get_generated(NUM, mc)
     quote = list(quote)
     quote = "".join(quote)
     return quote, status
