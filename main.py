@@ -12,8 +12,8 @@ def main():
     score = 0
     max_q = 10
     quotes = range(max_q)
-    for quote in quotes:
-        right_or_not = present_questions(quote, score, max_q, mc)
+    for iquote in quotes:
+        right_or_not = present_questions(iquote, score, max_q, mc)
         if right_or_not:
             score += 1
     end_screen(score, max_q)
@@ -34,14 +34,16 @@ def get_quote(mc):
         quote = get_actual(7, FILE)
     else:
         quote = get_generated(7, mc)
+    quote = list(quote)
+    quote = "".join(quote)
     return quote, status
 
-def present_questions(quote, score, max_q, mc):
+def present_questions(iquote, score, max_q, mc):
     os.system("clear")
-    print("Quote {} of {}. \t Current score {}".format(quote, max_q, score))
+    print("Quote {} of {}. \t Current score {}".format(iquote, max_q, score))
     print("Enter 'T' if you think a politician really said this, and 'F' if you think it's bogus\n")
     quote, veracity = get_quote(mc)
-    print('"' + quote + '"\n')
+    print('"' + str(quote) + '"\n')
     answer = input()
     ret = interpret_answer(answer, veracity)
     return ret
