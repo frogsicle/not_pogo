@@ -33,7 +33,7 @@ class MarkovChain(object):
 
     def printSth(self,maxItems = 20):
         res =""
-        t = random.choice(self.chain.keys())
+        t = random.choice(list(self.chain.keys()))
         for i in range(0,maxItems):
             try:
                 print(self.chain[t])
