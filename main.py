@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
+from __future__ import division
 from helpers import MarkovChain
-FILE = "assets/t1.txt"
+FILE = "assets/t2.txt"
 NUM=20
 import os
 import random
