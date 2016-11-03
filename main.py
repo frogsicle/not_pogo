@@ -6,6 +6,7 @@ NUM=20
 import os
 import random
 import time
+from builtins import input
 
 def main():
     mc = initialize(FILE)
